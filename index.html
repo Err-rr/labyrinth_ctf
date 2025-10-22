@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="generator" content="Labyrinth Engine v2.3.1-beta">
+    <meta name="build-timestamp" content="1704067200">
+    <title>Labyrinth: Endless Loop - Navigate the Infinite Maze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Labyrinth: Endless Loop</h1>
+            <p class="subtitle">Find the Way or find the Other Way</p>
+        </header>
+
+        <div class="game-area">
+            <div class="canvas-container">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+
+            <div class="sidebar">
+                <div class="panel stats-panel">
+                    <h2 class="panel-title">
+                        <span class="icon">🎮</span> Game Stats
+                    </h2>
+                    <div class="stats-grid">
+                        <div class="stat-row">
+                            <span class="stat-label">Session ID</span>
+                            <span class="stat-value" id="sessionId">-</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Maze Seed</span>
+                            <span class="stat-value" id="mazeSeed">-</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Position</span>
+                            <span class="stat-value" id="position">0, 0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Steps</span>
+                            <span class="stat-value" id="steps">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Score</span>
+                            <span class="stat-value" id="score">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel controls-panel">
+                    <h2 class="panel-title">
+                        <span class="icon">🎯</span> Controls
+                    </h2>
+                    <div class="controls-grid">
+                        <div></div>
+                        <button class="control-btn" data-direction="up">↑</button>
+                        <div></div>
+                        
+                        <button class="control-btn" data-direction="left">←</button>
+                        <div></div>
+                        <button class="control-btn" data-direction="right">→</button>
+                        
+                        <div></div>
+                        <button class="control-btn" data-direction="down">↓</button>
+                        <div></div>
+                    </div>
+                    <p class="controls-hint">Click buttons or use arrow keys</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="adminPanel" class="admin-overlay hidden">
+        <div class="admin-modal">
+            <div class="admin-header">
+                <h2 class="admin-title">🔐 Admin Access</h2>
+                <button class="close-btn" id="closeAdmin">✕</button>
+            </div>
+
+            <div id="loginForm">
+                <div class="form-group">
+                    <label for="adminUser">Username</label>
+                    <input type="text" id="adminUser" placeholder="admin" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="adminPass">Password</label>
+                    <input type="password" id="adminPass" placeholder="Enter password" autocomplete="off">
+                </div>
+                <button class="btn btn-primary" id="loginBtn">Login</button>
+                <div id="adminMsg" class="message"></div>
+            </div>
+
+            <div id="tokenForm" class="hidden">
+                <div class="form-group">
+                    <label for="tokenInput">Victory Token</label>
+                    <input type="text" id="tokenInput" placeholder="Enter token" autocomplete="off">
+                </div>
+                <button class="btn btn-primary" id="submitTokenBtn">Submit Token</button>
+                <div id="tokenMsg" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
