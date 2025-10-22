@@ -1,0 +1,55 @@
+# Labyrinth: Endless Loop
+
+An infinite procedurally generated maze navigation game with hidden challenges.
+
+## Controls
+
+- **Arrow Keys** or **On-screen Buttons**: Navigate the maze (↑ ↓ ← →)
+- **` or ~**: Open hidden admin panel
+
+## Game Features
+
+- Infinite maze generated from a unique seed
+- Session tracking with ID, position, steps, and score
+- Responsive design for all screen sizes
+
+## Hidden Admin Panel
+
+### Access
+- Username: `admin`
+- Password: `MAZE-1704067200-a3f9` (from reset code)
+
+### Token System
+Tokens follow the format: `{sessionId}:{seed}:{score}:{timestamp}:{hmac}`
+
+Validated using HMAC with security key: `L4byR1nth_$3cr3t!`
+
+## Developer Console
+
+Access hidden data via browser console:
+```javascript
+window.getRobotsTxt()      // Returns robots.txt content
+window.getBackupConfig()   // Returns backup configuration
+window.getMetadata()       // Returns hidden metadata
+window.game.generateToken() // Generate valid token
+```
+
+## Challenge Solution
+
+1. Open browser console
+2. Get session data from `window.game`
+3. Access admin panel (` key)
+4. Login with admin credentials
+5. Generate token: `window.game.generateToken()`
+6. Submit token to reveal flag
+
+## Technical Details
+
+- **Version**: 2.3.1-beta
+- **Build Timestamp**: 1704067200
+- **Algorithm**: SHA256 HMAC for token validation
+- **Maze Generation**: 35% wall probability, hash-based procedural generation
+
+---
+
+© 2025 Labyrinth Games | Press ` to begin the challenge
